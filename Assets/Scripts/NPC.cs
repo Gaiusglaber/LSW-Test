@@ -1,25 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class NPC : MonoBehaviour
+namespace LSWTest.Gameplay.Entities
 {
-    [SerializeField] private GameObject questObject = null;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class NPC : MonoBehaviour
     {
-        if (collision.CompareTag("Player"))
+        public static event Action OnPlayerGetCloseFromNpc = null;
+        public static event Action OnPlayerGetFarFromNpc = null;
+        [SerializeField] private GameObject questObject = null;
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            questObject.SetActive(true);
+            if (collision.CompareTag("Player"))
+            {
+                questObject.SetActive(true);
+            }
+            OnPlayerGetCloseFromNpc?.Invoke();
         }
-
-
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            questObject.SetActive(false);
+            if (collision.CompareTag("Player"))
+            {
+                questObject.SetActive(false);
+            }
+            OnPlayerGetFarFromNpc?.Invoke();
         }
     }
 }
