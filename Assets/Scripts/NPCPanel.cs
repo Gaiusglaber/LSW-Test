@@ -27,7 +27,7 @@ public class NPCPanel : MonoBehaviour, ILerpeable
     {
         
     }
-    public void ShowPanel()
+    public void ShowPanel(List<Clothing> NPCList)
     {
         StartCoroutine(Lerp(initialXPos, destXPos, lerperSpeed));
     }

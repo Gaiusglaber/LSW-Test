@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ClothesList", menuName = "Clothes")]
+[CreateAssetMenu(fileName = "ClothesList", menuName = "Clothes/Clothing List")]
 public class ClothesList : ScriptableObject
 {
-    List<Clothes> clothesList = new List<Clothes>();
-
+    public List<Clothing> clothesList = new List<Clothing>();
 }

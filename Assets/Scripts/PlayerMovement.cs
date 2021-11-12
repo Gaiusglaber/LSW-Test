@@ -10,6 +10,7 @@ namespace LSWTest.Gameplay.Entities
     {
         #region EXPOSED_FIELDS
         [Range(1,50)][SerializeField] private float speed = 0;
+        [SerializeField] private List<NPC> NPCList = new List<NPC>();
         #endregion
         #region PRIVATE_FIELDS
         private Rigidbody2D rigidbody;
@@ -17,18 +18,22 @@ namespace LSWTest.Gameplay.Entities
         private float horizontalMovement = 0;
         private float verticalMovement = 0;
         private bool CanTalkToNpc = false;
-        public event Action OnNpcTalk = null;
+        public event Action<List<Clothing>> OnNpcTalk = null;
         public event Action OnDeNpcTalk = null;
         public event Action OnMoveUp = null;
         public event Action OnMoveDown = null;
         public event Action OnMoveRight = null;
         public event Action OnMoveLeft = null;
+        private List<Clothing> listToPass = new List<Clothing>();
         #endregion
         #region UNITY_CALLS
         private void Awake()
         {
-            NPC.OnPlayerGetCloseFromNpc += ActivateTalkInput;
-            NPC.OnPlayerGetFarFromNpc += DeactivateTalkInput;
+            foreach (var NPC in NPCList){
+                NPC.OnPlayerGetCloseFromNpc += ActivateTalkInput;
+                NPC.OnPlayerGetFarFromNpc += DeactivateTalkInput;
+            }
+            
         }
         void Start()
         {
@@ -43,8 +48,11 @@ namespace LSWTest.Gameplay.Entities
         }
         private void OnDestroy()
         {
-            NPC.OnPlayerGetCloseFromNpc -= ActivateTalkInput;
-            NPC.OnPlayerGetFarFromNpc -= DeactivateTalkInput;
+            foreach (var NPC in NPCList)
+            {
+                NPC.OnPlayerGetCloseFromNpc -= ActivateTalkInput;
+                NPC.OnPlayerGetFarFromNpc -= DeactivateTalkInput;
+            }
         }
         #endregion
         #region PRIVATE_FIELDS
@@ -56,7 +64,7 @@ namespace LSWTest.Gameplay.Entities
             transform.Translate(positionToMove*speed*Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.E) && CanTalkToNpc)
             {
-                OnNpcTalk?.Invoke();
+                OnNpcTalk?.Invoke(listToPass);
                 CanTalkToNpc = false;
             }
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -96,8 +104,9 @@ namespace LSWTest.Gameplay.Entities
             animator.ResetTrigger("Left");
             animator.ResetTrigger("Right");
         }
-        private void ActivateTalkInput()
+        private void ActivateTalkInput(List<Clothing> NPCLIST)
         {
+            listToPass = NPCLIST;
             CanTalkToNpc = true;
         }
         private void DeactivateTalkInput()

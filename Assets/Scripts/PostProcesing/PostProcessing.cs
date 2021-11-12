@@ -1,9 +1,9 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Numetry.Tools.Lerper;
 using UnityEngine.Rendering.PostProcessing;
 using LSWTest.Gameplay.Entities;
-
 public class PostProcessing : MonoBehaviour,ILerpeable
 {
     #region EXPOSED_FIELDS
@@ -34,7 +34,7 @@ public class PostProcessing : MonoBehaviour,ILerpeable
         player.OnNpcTalk -= Blur;
         player.OnDeNpcTalk -= UnBlur;
     }
-    private void Blur()
+    private void Blur(List<Clothing> NPCList)
     {
         StartCoroutine(Lerp(InitialBlurValue, amountOfBlur, speedLerper));
     }
