@@ -498,6 +498,7 @@ MonoBehaviour:
   - {fileID: 2066509232}
   - {fileID: 1110491924}
   - {fileID: 554920794}
+  - {fileID: 1445526953}
   player: {fileID: 1415449982}
 --- !u!1 &150826635
 GameObject:
@@ -4917,6 +4918,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490529564081875079, guid: 6e3f23bbccffe134ba3b7697654ebc35,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ce1b54c9a361b2c4bbf2557c3223a71b,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 3588113161629231529, guid: 6e3f23bbccffe134ba3b7697654ebc35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e3f23bbccffe134ba3b7697654ebc35, type: 3}
@@ -5360,6 +5367,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1445526953 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6490529564081875079, guid: 6e3f23bbccffe134ba3b7697654ebc35,
+    type: 3}
+  m_PrefabInstance: {fileID: 1177691623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1498754453
 GameObject:
   m_ObjectHideFlags: 0

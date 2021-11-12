@@ -11,7 +11,8 @@ public class Clothes : ScriptableObject
         LEG,
         CHEST
     }
-    public Animator animator = null;
+    public string name = string.Empty;
+    public AnimatorOverrideController animator = null;
     public int price = 0;
     public TYPE type;
 }
