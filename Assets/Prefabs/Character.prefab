@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 379973436219952463}
   - component: {fileID: 3508181560091844814}
+  - component: {fileID: 5464163580885367526}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -197,6 +198,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5464163580885367526
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743506238386624513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 400b80512c8a3be438a98d002722c035, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5496000131966645620
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5115007928145956266}
   - component: {fileID: 2942131884202573028}
+  - component: {fileID: 2708733659668304659}
   m_Layer: 0
   m_Name: Legs
   m_TagString: Untagged
@@ -394,6 +415,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2708733659668304659
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645926256934553092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5a334341dd5b0b547836541ac88a1af2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5706411765902641160
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8795139349432693780}
   - component: {fileID: 703867370465475630}
+  - component: {fileID: 455811441201222589}
   m_Layer: 0
   m_Name: Feet
   m_TagString: Untagged
@@ -587,6 +628,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &455811441201222589
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824038409534818205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 3b56e8c5c0d0d454a9794d2a69829254, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7667211229536815582
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,12 +12,17 @@ namespace LSWTest.Gameplay.Entities
         [Range(1,50)][SerializeField] private float speed = 0;
         #endregion
         #region PRIVATE_FIELDS
+        private Rigidbody2D rigidbody;
         private Animator animator = null;
         private float horizontalMovement = 0;
         private float verticalMovement = 0;
         private bool CanTalkToNpc = false;
         public event Action OnNpcTalk = null;
         public event Action OnDeNpcTalk = null;
+        public event Action OnMoveUp = null;
+        public event Action OnMoveDown = null;
+        public event Action OnMoveRight = null;
+        public event Action OnMoveLeft = null;
         #endregion
         #region UNITY_CALLS
         private void Awake()
@@ -27,6 +32,7 @@ namespace LSWTest.Gameplay.Entities
         }
         void Start()
         {
+            rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
         }
 
@@ -57,23 +63,29 @@ namespace LSWTest.Gameplay.Entities
             {
                 OnDeNpcTalk?.Invoke();
             }
-
             if (verticalMovement > 0)
             {
                 animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
+                OnMoveUp?.Invoke();
                 animator.SetTrigger("Up");
-            }else if (verticalMovement < 0)
+
+            }
+            else if (verticalMovement < 0)
             {
                 animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
+                OnMoveDown?.Invoke();
                 animator.SetTrigger("Down");
             }
-            if (horizontalMovement > 0)
+            else if (horizontalMovement > 0)
             {
                 animator.SetFloat("Speed", Mathf.Abs(verticalMovement));
+                OnMoveRight?.Invoke();
                 animator.SetTrigger("Right");
-            }else if (horizontalMovement < 0)
+            }
+            else if (horizontalMovement < 0)
             {
                 animator.SetFloat("Speed", Mathf.Abs(verticalMovement));
+                OnMoveLeft?.Invoke();
                 animator.SetTrigger("Left");
             }
         }

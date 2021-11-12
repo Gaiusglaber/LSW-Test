@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Feet04Controller
+  m_Controller: {fileID: 9100000, guid: 28449846be236a043b1fa54ca181b26d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c3976ffbbc055c7419734e9fb9ed4fec, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d9ce87eae3ac70f41a0ecf35564da28d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 17c04669cca72d04e82c4da2727acbaa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f8a751361697d91418f6f512462f80b4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7672d6077e5d13b47b46f5e248c42245, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c2b705bbbdcc7104fb1e75e49f7660fc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fd943291635f3ed40a1cd2f4df19a468, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 527d03d6e4d10ce4dbd84bc3eea7208c, type: 2}
