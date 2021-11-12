@@ -657,6 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1111574067436586347}
   - component: {fileID: 5085057637209641615}
+  - component: {fileID: 6490529564081875079}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -729,6 +730,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6490529564081875079
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667211229536815582}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: e0a694cb1bc69914491c44e187614bdd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3848494629932704533
 PrefabInstance:
   m_ObjectHideFlags: 0
