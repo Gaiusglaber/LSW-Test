@@ -9,7 +9,7 @@ namespace LSWTest.Gameplay.Entities
     public class PlayerMovement : MonoBehaviour
     {
         #region EXPOSED_FIELDS
-        [Range(0.1f,0.7f)][SerializeField] private float speed = 0;
+        [Range(1,50)][SerializeField] private float speed = 0;
         #endregion
         #region PRIVATE_FIELDS
         private Animator animator = null;
@@ -44,10 +44,10 @@ namespace LSWTest.Gameplay.Entities
         #region PRIVATE_FIELDS
         private void InputManagment()
         {
-            horizontalMovement = Input.GetAxisRaw("Horizontal") * speed;
-            verticalMovement = Input.GetAxisRaw("Vertical")*speed;
+            horizontalMovement = Input.GetAxisRaw("Horizontal");
+            verticalMovement = Input.GetAxisRaw("Vertical");
             Vector2 positionToMove = new Vector2(horizontalMovement, verticalMovement);
-            transform.Translate(positionToMove);
+            transform.Translate(positionToMove*speed*Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.E) && CanTalkToNpc)
             {
                 OnNpcTalk?.Invoke();
