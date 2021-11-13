@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Legs02
   m_EditorClassIdentifier: 
   name: Leather Pants
-  animator: {fileID: 22100000, guid: bcb8ef094903a5849ab3f0397ed57392, type: 2}
+  animator: {fileID: 22100000, guid: 92ed70d286cfb364baae3679df6c3f4a, type: 2}
   image: {fileID: 6373048116405451881, guid: 895e3b426cf446d408608b5f91ce1166, type: 3}
   price: 75
   type: 1

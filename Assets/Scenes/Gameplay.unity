@@ -489,7 +489,7 @@ MonoBehaviour:
   player: {fileID: 1415449982}
   NPCPanel: {fileID: 1960270239}
   coinText: {fileID: 322015865}
-  cantCoins: 50
+  cantCoins: 1000
   items:
   - {fileID: 1237352768}
   - {fileID: 22441988}
@@ -1294,7 +1294,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &733271678
 Transform:
@@ -1348,7 +1348,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 9
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2012,7 +2012,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1109694255
 Transform:
@@ -2585,7 +2585,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1124689433
 Transform:
@@ -5141,7 +5141,7 @@ PrefabInstance:
     - target: {fileID: 703867370465475630, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2708733659668304659, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
@@ -5152,22 +5152,22 @@ PrefabInstance:
     - target: {fileID: 2942131884202573028, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3436833127322000348, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3508181560091844814, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5085057637209641615, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5464163580885367526, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
@@ -5253,7 +5253,7 @@ PrefabInstance:
     - target: {fileID: 5706898571671189893, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5759619826616173622, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
@@ -5475,14 +5475,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415449976}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.6287237
+  m_Mass: 0.72930187
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6469,8 +6469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -618, y: -97}
-  m_SizeDelta: {x: 369.22864, y: 628.726}
+  m_AnchoredPosition: {x: -692.5, y: -97}
+  m_SizeDelta: {x: 220.19647, y: 628.726}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960270237
 MonoBehaviour:

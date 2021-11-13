@@ -18,6 +18,7 @@ namespace LSWTest.Gameplay.Entities
         private float horizontalMovement = 0;
         private float verticalMovement = 0;
         private bool CanTalkToNpc = false;
+        private bool talkingToNpc = false;
         public event Action<List<Clothing>> OnNpcTalk = null;
         public event Action OnDeNpcTalk = null;
         public event Action OnMoveUp = null;
@@ -61,15 +62,17 @@ namespace LSWTest.Gameplay.Entities
             horizontalMovement = Input.GetAxisRaw("Horizontal");
             verticalMovement = Input.GetAxisRaw("Vertical");
             Vector2 positionToMove = new Vector2(horizontalMovement, verticalMovement);
-            transform.Translate(positionToMove*speed*Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.E) && CanTalkToNpc)
+            rigidbody.velocity = positionToMove * speed;
+            //transform.Translate(positionToMove*speed*Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.E) && CanTalkToNpc&& !talkingToNpc)
             {
                 OnNpcTalk?.Invoke(listToPass);
-                CanTalkToNpc = false;
+                talkingToNpc = true;
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && CanTalkToNpc&& talkingToNpc)
             {
                 OnDeNpcTalk?.Invoke();
+                talkingToNpc = false;
             }
             if (verticalMovement > 0)
             {
@@ -112,6 +115,11 @@ namespace LSWTest.Gameplay.Entities
         private void DeactivateTalkInput()
         {
             CanTalkToNpc = false;
+            if (talkingToNpc)
+            {
+                OnDeNpcTalk?.Invoke();
+                talkingToNpc = false;
+            }
         }
         #endregion
     }
