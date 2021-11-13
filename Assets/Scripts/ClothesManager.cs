@@ -5,10 +5,12 @@ using LSWTest.Gameplay.Entities;
 
 public class ClothesManager : MonoBehaviour
 {
-    [SerializeField] private Animator[] animatorControllers=null;
+    [SerializeField] private Animator[] animatorControllers=null;//0 FEET, 1 CHEST,2 LEGS,3 HAIR
     [SerializeField] private PlayerMovement player;
+    [SerializeField] private UIManager UImanager = null;
     private void Start()
     {
+        UImanager.OnChangingClothes += ChangeAnimator;
         player.OnMoveDown += SetAnimationDown;
         player.OnMoveLeft += SetAnimationLeft;
         player.OnMoveRight += SetAnimationRight;
@@ -16,10 +18,27 @@ public class ClothesManager : MonoBehaviour
     }
     private void OnDestroy()
     {
+        UImanager.OnChangingClothes -= ChangeAnimator;
         player.OnMoveDown -= SetAnimationDown;
         player.OnMoveLeft -= SetAnimationLeft;
         player.OnMoveRight -= SetAnimationRight;
         player.OnMoveUp -= SetAnimationUp;
+    }
+    private void ChangeAnimator(Item AnimatorToChange)
+    {
+        if (AnimatorToChange.ItemType.Equals(Item.TYPE.FEET))
+        {
+            animatorControllers[0].runtimeAnimatorController = AnimatorToChange.AnimatorController;
+        }else if (AnimatorToChange.ItemType.Equals(Item.TYPE.CHEST))
+        {
+            animatorControllers[1].runtimeAnimatorController = AnimatorToChange.AnimatorController;
+        }else if (AnimatorToChange.ItemType.Equals(Item.TYPE.LEG))
+        {
+            animatorControllers[2].runtimeAnimatorController = AnimatorToChange.AnimatorController;
+        }else if (AnimatorToChange.ItemType.Equals(Item.TYPE.HAIR))
+        {
+            animatorControllers[3].runtimeAnimatorController = AnimatorToChange.AnimatorController;
+        }
     }
     private void SetAnimationUp()
     {

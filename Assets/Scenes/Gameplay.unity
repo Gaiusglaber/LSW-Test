@@ -495,7 +495,7 @@ MonoBehaviour:
   - {fileID: 22441988}
   - {fileID: 2020941135}
   - {fileID: 1001896443}
-  ImageSize: 100
+  ImageSize: 2
 --- !u!1 &128434857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 256843391603557170, guid: 6e3f23bbccffe134ba3b7697654ebc35,
@@ -520,6 +520,7 @@ MonoBehaviour:
   - {fileID: 554920794}
   - {fileID: 1445526953}
   player: {fileID: 1415449982}
+  UImanager: {fileID: 96869042}
 --- !u!1 &150826635
 GameObject:
   m_ObjectHideFlags: 0
@@ -5272,6 +5273,7 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents:
     - {fileID: 3588113161629231529, guid: 6e3f23bbccffe134ba3b7697654ebc35, type: 3}
+    - {fileID: 6907267964651629451, guid: 6e3f23bbccffe134ba3b7697654ebc35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e3f23bbccffe134ba3b7697654ebc35, type: 3}
 --- !u!1 &1218636680
 GameObject:

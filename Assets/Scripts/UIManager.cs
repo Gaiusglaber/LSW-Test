@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float ImageSize = 0;
     #endregion
     #region PRIVATE_FIELDS
+    public event Action<Item> OnChangingClothes = null;
     private float InitialImageSize = 0;
     #endregion
     private void Awake()
@@ -22,7 +24,7 @@ public class UIManager : MonoBehaviour
         InitialImageSize = ImageSize;
         foreach (var item in items)
         {
-            
+            item.OnBuyItem += BuyItem;
         }
         player.OnNpcTalk += NPCPanel.ShowPanel;
         player.OnNpcTalk += AddItemsToShop;
@@ -34,14 +36,22 @@ public class UIManager : MonoBehaviour
     }
     private void OnDestroy()
     {
+        foreach (var item in items)
+        {
+            item.OnBuyItem -= BuyItem;
+        }
         player.OnNpcTalk -= NPCPanel.ShowPanel;
         player.OnNpcTalk -= AddItemsToShop;
         player.OnDeNpcTalk -= NPCPanel.HidePanel;
     }
-    private void UpdateCoins(int CoinsToDescount)
+    private void BuyItem(Item itemToBuy)
     {
-        cantCoins -= CoinsToDescount;
-        coinText.text = cantCoins.ToString();
+        if (int.Parse(itemToBuy.coinText.text)<= cantCoins)
+        {
+            cantCoins -= int.Parse(itemToBuy.coinText.text);
+            coinText.text = cantCoins.ToString();
+            OnChangingClothes?.Invoke(itemToBuy);
+        }
     }
     private void AddItemsToShop(List<Clothing> NPCList)
     {
@@ -71,6 +81,7 @@ public class UIManager : MonoBehaviour
             items[i].clothImage = IncreaseImageSize(items[i].clothImage);
             items[i].coinText.text = NPCList[i].price.ToString();
             items[i].Title.text = NPCList[i].name;
+            items[i].AnimatorController = NPCList[i].animator;
         }
     }
     Image IncreaseImageSize(Image ImageToIncrease)
