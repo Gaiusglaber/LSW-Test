@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
                     break;
                 case Item.TYPE.HAIR:
                     items[i].clothImage.rectTransform.anchoredPosition = new Vector2(items[i].clothImage.rectTransform.anchoredPosition.x, -30);
-                    ImageSize /= 1.2f;
+                    ImageSize = InitialImageSize/1.2f;
                     break;
             }
             items[i].clothImage.sprite = NPCList[i].image;
