@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4799175050003980410}
   m_Layer: 0
   m_Name: Clothes
-  m_TagString: Untagged
+  m_TagString: Clothing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,6 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questObject: {fileID: 6453843705953169911}
+  NPCType: 0
+  clothesList: {fileID: 0}
 --- !u!61 &3588113161629231529
 BoxCollider2D:
   m_ObjectHideFlags: 0

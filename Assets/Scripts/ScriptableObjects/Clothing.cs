@@ -19,4 +19,5 @@ public class Clothing : ScriptableObject
     public Sprite image = null;
     public int price = 0;
     public TYPE type;
+    public int id = 0;
 }

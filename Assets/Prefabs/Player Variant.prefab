@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 5130309378558957202}
   player: {fileID: 1415449982}
   UImanager: {fileID: 0}
+  clothesList: {fileID: 11400000, guid: c051195d3b27605499d6a804132d9a16, type: 2}
 --- !u!1001 &2098813159394115093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 5706411765902641160, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5706411765902641160, guid: 6e3f23bbccffe134ba3b7697654ebc35,
         type: 3}

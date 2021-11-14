@@ -17,3 +17,4 @@ MonoBehaviour:
   image: {fileID: 4723107735738678597, guid: ff68c408f951a02439fce45b467e4497, type: 3}
   price: 250
   type: 3
+  id: 13

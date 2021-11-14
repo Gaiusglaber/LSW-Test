@@ -82,6 +82,7 @@ public class UIManager : MonoBehaviour
             items[i].coinText.text = NPCList[i].price.ToString();
             items[i].Title.text = NPCList[i].name;
             items[i].AnimatorController = NPCList[i].animator;
+            items[i].clothing = NPCList[i];
         }
     }
     Image IncreaseImageSize(Image ImageToIncrease)

@@ -31,8 +31,11 @@ namespace LSWTest.Gameplay.Entities
         private void Awake()
         {
             foreach (var NPC in NPCList){
-                NPC.OnPlayerGetCloseFromNpc += ActivateTalkInput;
-                NPC.OnPlayerGetFarFromNpc += DeactivateTalkInput;
+                if (NPC)
+                {
+                    NPC.OnPlayerGetCloseFromNpc += ActivateTalkInput;
+                    NPC.OnPlayerGetFarFromNpc += DeactivateTalkInput;
+                }
             }
             
         }
@@ -51,8 +54,11 @@ namespace LSWTest.Gameplay.Entities
         {
             foreach (var NPC in NPCList)
             {
-                NPC.OnPlayerGetCloseFromNpc -= ActivateTalkInput;
-                NPC.OnPlayerGetFarFromNpc -= DeactivateTalkInput;
+                if (NPC)
+                {
+                    NPC.OnPlayerGetCloseFromNpc -= ActivateTalkInput;
+                    NPC.OnPlayerGetFarFromNpc -= DeactivateTalkInput;
+                }
             }
         }
         #endregion

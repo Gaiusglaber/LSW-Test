@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
         HAIR
     }
     #region EXPOSED_FIELDS
+    [SerializeField] public Clothing clothing = null;
     [SerializeField] public TMPro.TMP_Text coinText = null;
     [SerializeField] public Image clothImage = null;
     [SerializeField] public TMPro.TMP_Text Title = null;
