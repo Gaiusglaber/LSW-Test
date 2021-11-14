@@ -12,6 +12,7 @@ public class ClothesManager : MonoBehaviour
     [SerializeField] private UIManager UImanager = null;
     [SerializeField] private ClothesList clothesList = null;
     private List<int> playerClothingID = new List<int>();
+    private bool deleted = false;
     private void Start()
     {
         for (int i=0;i< clothesList.clothesList.Count; i++)
@@ -61,6 +62,7 @@ public class ClothesManager : MonoBehaviour
     {
         foreach (var id in playerClothingID)
         {
+            if (!deleted)
             PlayerPrefs.SetInt("" + id, id);
         }
         if (UImanager)
@@ -119,6 +121,7 @@ public class ClothesManager : MonoBehaviour
     }
     public void ResetClothes()
     {
+        deleted = true;
         PlayerPrefs.DeleteAll();
     }
 }
