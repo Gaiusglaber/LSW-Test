@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject result;
-    public TMPro.TMP_Text wintext;
-    public static bool win;
-    public static bool gameover = false;
+    [SerializeField] private GameObject player = null;
     private static GameManager instance;
     public static GameManager Get()
     {
