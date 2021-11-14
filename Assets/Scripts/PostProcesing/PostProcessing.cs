@@ -15,7 +15,8 @@ public class PostProcessing : MonoBehaviour,ILerpeable
     #region PRIVATE_FIELDS
     private DepthOfField depthOfField = null;
     private Vignette vignette = null;
-    private FloatLerper floatLerper = null;
+    private FloatLerper DepthLerper = null;
+    private FloatLerper VignetteLerper = null;
     private float InitialBlurValue = 0;
 
     #endregion
@@ -30,7 +31,8 @@ public class PostProcessing : MonoBehaviour,ILerpeable
     }
     void Start()
     {
-        floatLerper = new FloatLerper(Time.deltaTime, AbstractLerper<float>.SMOOTH_TYPE.STEP_SMOOTHER);
+        VignetteLerper = new FloatLerper(Time.deltaTime, AbstractLerper<float>.SMOOTH_TYPE.STEP_SMOOTHER);
+        DepthLerper = new FloatLerper(Time.deltaTime, AbstractLerper<float>.SMOOTH_TYPE.STEP_SMOOTHER);
         postProcessProfile.profile.TryGetSettings(out depthOfField);
         postProcessProfile.profile.TryGetSettings(out vignette);
         InitialBlurValue = depthOfField.focusDistance.value;
@@ -59,34 +61,34 @@ public class PostProcessing : MonoBehaviour,ILerpeable
     }
     public IEnumerator LerpVignette(float firstPos, float endPos, float speed)
     {
-        floatLerper.SetValues(firstPos, endPos, speed, true);
-        while (floatLerper.On)
+        VignetteLerper.SetValues(firstPos, endPos, speed, true);
+        while (VignetteLerper.On)
         {
-            if (floatLerper.Reached)
+            if (VignetteLerper.Reached)
             {
-                floatLerper.SwitchState(false);
+                VignetteLerper.SwitchState(false);
             }
             else
             {
-                floatLerper.Update();
-                vignette.intensity.value = floatLerper.CurrentValue;
+                VignetteLerper.Update();
+                vignette.intensity.value = VignetteLerper.CurrentValue;
             }
             yield return new WaitForEndOfFrame();
         }
     }
     public IEnumerator Lerp(float firstPos, float endPos, float speed)
     {
-        floatLerper.SetValues(firstPos, endPos, speed, true);
-        while (floatLerper.On)
+        DepthLerper.SetValues(firstPos, endPos, speed, true);
+        while (DepthLerper.On)
         {
-            if (floatLerper.Reached)
+            if (DepthLerper.Reached)
             {
-                floatLerper.SwitchState(false);
+                DepthLerper.SwitchState(false);
             }
             else
             {
-                floatLerper.Update();
-                depthOfField.focusDistance.value = floatLerper.CurrentValue;
+                DepthLerper.Update();
+                depthOfField.focusDistance.value = DepthLerper.CurrentValue;
             }
             yield return new WaitForEndOfFrame();
         }
